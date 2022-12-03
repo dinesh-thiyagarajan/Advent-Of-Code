@@ -1,6 +1,6 @@
 fun main() {
-    val rawData = object {}.javaClass.getResourceAsStream("calorieCounter.txt")?.bufferedReader()?.readLines()
-    if (rawData.isNullOrEmpty()) {
+    val rawData = FileReader("calorieCounter.txt").getRawData()
+    if (rawData.isEmpty()) {
         print("No data found")
         return
     }
